@@ -16,12 +16,14 @@ const isDark = computed({
 		<UButton
 			:icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'"
 			color="neutral"
-			variant="ghost"
+			variant="link"
 			@click="isDark = !isDark"
+			size="md"
+			class=""
 		/>
 
 		<template #fallback>
-			<div class="size-8" />
+			<div class="size-8"></div>
 		</template>
 	</ClientOnly>
 </template>
