@@ -1,11 +1,31 @@
 <script setup>
-import { motion } from "motion-v";
+import { motion, useScroll } from "motion-v";
+const { scrollYProgress } = useScroll();
+
+/**
+ * ==============   Styles   ================
+ */
+
+const scrollIndicator = {
+	scaleX: scrollYProgress,
+	position: "fixed",
+	top: 0,
+	left: 0,
+	right: 0,
+	height: "2px",
+	originX: 0,
+	backgroundColor: "#737373",
+};
 </script>
 
 <template>
 	<UApp>
-		<motion.div />
 		<div class="flex flex-col min-h-screen">
+			<motion.div
+				class="z-[100]"
+				id="scroll-indicator"
+				:style="scrollIndicator"
+			/>
 			<Header />
 
 			<main class="flex-1 w-full">
