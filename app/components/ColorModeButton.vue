@@ -1,29 +1,29 @@
-<script setup>
+<script setup lang="ts">
 const colorMode = useColorMode();
 
 const isDark = computed({
-	get() {
-		return colorMode.value === "dark";
-	},
-	set(_isDark) {
-		colorMode.preference = _isDark ? "dark" : "light";
+	get: () => colorMode.value === "dark",
+	set: (v) => {
+		colorMode.preference = v ? "dark" : "light";
+		// brief smooth color change
+		const root = document.documentElement;
+		root.classList.add("theme-anim");
+		setTimeout(() => root.classList.remove("theme-anim"), 250);
 	},
 });
 </script>
 
 <template>
 	<ClientOnly v-if="!colorMode?.forced">
-		<UButton
-			:icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'"
+		<USwitch
+			v-model="isDark"
 			color="neutral"
-			variant="link"
-			@click="isDark = !isDark"
-			size="md"
-			class=""
+			size="sm"
+			aria-label="Toggle dark mode"
+			class="data-[checked=true]:[&_.ui-icon]:rotate-0 data-[checked=false]:[&_.ui-icon]:rotate-0"
 		/>
-
 		<template #fallback>
-			<div class="size-8"></div>
+			<div><USkeleton class="h-4 w-8" /></div>
 		</template>
 	</ClientOnly>
 </template>

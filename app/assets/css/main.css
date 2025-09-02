@@ -2,7 +2,7 @@
 @import "@nuxt/ui";
 
 @theme static {
-	--font-sans: "Geist", sans-serif;
+	--font-sans: "Inter", sans-serif;
 }
 
 .router-link-active {
@@ -33,4 +33,19 @@
 	--ui-color-primary-800: oklch(45% 0.085 224.283);
 	--ui-color-primary-900: oklch(39.8% 0.07 227.392);
 	--ui-color-primary-950: oklch(30.2% 0.056 229.695);
+}
+
+/* Hide scroll bar */
+::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+}
+
+* {
+	scrollbar-width: none;
+}
+
+html,
+body {
+	-ms-overflow-style: none;
 }

@@ -1,8 +1,28 @@
 <template>
-	<h1>Index page</h1>
-	<div>This is root page</div>
+	<section>
+		<!-- about and social links -->
+		<section>
+			<div>
+				<About />
+			</div>
+		</section>
 
-	<div class="p-5">
-		<UButton color="neutral" class="cursor-pointer">Button</UButton>
-	</div>
+		<div class="h-[40px]"></div>
+
+		<!-- featured -->
+		<section>
+			<div>
+				<Featured />
+			</div>
+		</section>
+
+		<div class="h-[40px]"></div>
+
+		<!-- tags -->
+		<section>
+			<div>
+				<Tags />
+			</div>
+		</section>
+	</section>
 </template>
