@@ -96,7 +96,7 @@ watch(
 							Effective Python Testing: Strategies and Tools
 						</div>
 						<div
-							class="text-xs cursor-default line-clamp-1 opacity-90"
+							class="text-xs cursor-default opacity-90"
 						>
 							<UButton
 								color="neutral"
