@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { DropdownMenuItem } from "@nuxt/ui";
 import { useMediaQuery } from "@vueuse/core";
+import { motion, AnimatePresence } from "motion-v";
 
 const isMenuOpen = ref(false);
 
@@ -59,15 +60,18 @@ const menuItems = computed<DropdownMenuItem[]>(() =>
 		<div
 			class="max-w-[440px] mx-auto grid grid-cols-2 sm:grid-cols-[max-content_minmax(0,1fr)_max-content] items-center"
 		>
-			<div
-				class="flex items-center justify-start hover:scale-105 duration-200"
-			>
-				<NuxtLink to="/" @click.capture="closeMenu">
-					<UAvatar
-						src="/images/logo.jpg"
-						class="w-[60px] h-[60px] grayscale"
-					/>
-				</NuxtLink>
+			<div class="flex items-center justify-start">
+				<motion.div
+					:while-hover="{ scale: 1.05 }"
+					:while-press="{ scale: 0.95 }"
+				>
+					<NuxtLink to="/" @click.capture="closeMenu">
+						<UAvatar
+							src="/images/logo.jpg"
+							class="w-[60px] h-[60px] grayscale"
+						/>
+					</NuxtLink>
+				</motion.div>
 			</div>
 
 			<div
@@ -77,7 +81,7 @@ const menuItems = computed<DropdownMenuItem[]>(() =>
 					<NuxtLink
 						:to="item.to"
 						@click.capture="closeMenu"
-						class="opacity-60 hover:opacity-100 duration-200"
+						class="opacity-60 hover:opacity-100 duration-200 font-semibold"
 						>{{ item.lable }}</NuxtLink
 					>
 				</div>
@@ -112,20 +116,33 @@ const menuItems = computed<DropdownMenuItem[]>(() =>
 		aria-label="Navigation popup"
 	>
 		<!-- Overlay -->
-		<Transition name="fade" appear>
-			<button
+		<AnimatePresence>
+			<motion.div
 				v-show="isMenuOpen"
-				class="fixed inset-0 bg-black/70 pointer-events-auto"
+				key="overlay"
+				class="fixed inset-0 bg-black/60"
+				:initial="{ opacity: 0 }"
+				:animate="{ opacity: 1, transition: { duration: 0.5 } }"
+				:exit="{ opacity: 0, transition: { duration: 0.5 } }"
 				@click="toggleMenu"
-				aria-label="Close overlay"
-			></button>
-		</Transition>
+			/>
+		</AnimatePresence>
 
 		<!-- Panel -->
-		<Transition name="slideDown" appear>
-			<div
+		<AnimatePresence>
+			<motion.div
 				v-show="isMenuOpen"
+				key="panel"
 				class="fixed top-0 inset-x-0 min-h-80 bg-default pointer-events-auto w-full pt-[130px]"
+				:initial="{ y: '-100%' }"
+				:animate="{
+					y: 0,
+					transition: { duration: 0.5, ease: 'easeIn' },
+				}"
+				:exit="{
+					y: '-100%',
+					transition: { duration: 0.5, ease: 'easeOut' },
+				}"
 			>
 				<div class="w-[480px] px-[20px] mx-auto space-y-5">
 					<div class="duration-500">
@@ -146,43 +163,7 @@ const menuItems = computed<DropdownMenuItem[]>(() =>
 						<div>six</div>
 					</div>
 				</div>
-			</div>
-		</Transition>
+			</motion.div>
+		</AnimatePresence>
 	</div>
 </template>
-
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-	transition: opacity 520ms ease-out;
-}
-.fade-enter-from,
-.fade-leave-to {
-	opacity: 0;
-}
-
-.slideDown-enter-active,
-.slideDown-leave-active {
-	transition:
-		transform 520ms cubic-bezier(0.16, 1, 0.3, 1),
-		opacity 520ms cubic-bezier(0.16, 1, 0.3, 1);
-	will-change: transform, opacity;
-}
-.slideDown-enter-from,
-.slideDown-leave-to {
-	transform: translateY(-100%);
-	opacity: 1;
-}
-.slideDown-enter-to,
-.slideDown-leave-from {
-	transform: translateY(0);
-	opacity: 1;
-}
-
-.box {
-	width: 100px;
-	height: 100px;
-	background-color: #0cdcf7;
-	border-radius: 5px;
-}
-</style>
