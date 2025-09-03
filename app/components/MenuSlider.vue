@@ -12,7 +12,7 @@ const { isMenuSliderOpen, closeMenuSlider } = useMenuSlider();
 			:initial="{ opacity: 0 }"
 			:animate="{
 				opacity: 1,
-				transition: { duration: 0.25 },
+				transition: { duration: 0.5 },
 			}"
 			:exit="{
 				opacity: 0,
@@ -32,11 +32,11 @@ const { isMenuSliderOpen, closeMenuSlider } = useMenuSlider();
 			:initial="{ y: '-100%' }"
 			:animate="{
 				y: 0,
-				transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
+				transition: { duration: 0.8, ease: 'easeOut' },
 			}"
 			:exit="{
 				y: '-100%',
-				transition: { duration: 1, ease: [0.22, 1, 0.36, 1] },
+				transition: { duration: 0.4, ease: 'easeIn' },
 			}"
 		>
 			<div class="max-w-[480px] px-[20px] mx-auto space-y-4">

@@ -2,10 +2,10 @@
 import { motion, AnimatePresence, delay } from "motion-v";
 const { isMenuSliderOpen, closeMenuSlider } = useMenuSlider();
 
-const DELAY_IN = 0.2;
+const DELAY_IN = 0.4;
 const DELAY_OUT = 0;
-const DURATION_IN = 0.8;
-const DURATION_OUT = 0.03;
+const DURATION_IN = 0.5;
+const DURATION_OUT = 0.5;
 const STAGGER_IN = 0;
 const STAGGER_OUT = 0;
 
