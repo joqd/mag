@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { motion, AnimatePresence } from "motion-v";
+import { motion, AnimatePresence, delay } from "motion-v";
 const { isMenuSliderOpen, closeMenuSlider } = useMenuSlider();
 
-const D_IN = 0.8; // duration in
-const D_OUT = 0.03; // duration out
-const STAGGER_IN = 0.15;
-const STAGGER_OUT = 0.05;
+const DELAY_IN = 0.2;
+const DELAY_OUT = 0;
+const DURATION_IN = 0.8;
+const DURATION_OUT = 0.03;
+const STAGGER_IN = 0;
+const STAGGER_OUT = 0;
 
 const groupVariants = {
 	hidden: {},
@@ -23,8 +25,14 @@ const groupVariants = {
 
 const itemVariants = {
 	hidden: { opacity: 0 },
-	show: { opacity: 1, transition: { duration: D_IN } },
-	exit: { opacity: 0, transition: { duration: D_OUT } },
+	show: {
+		opacity: 1,
+		transition: { duration: DURATION_IN, delay: DELAY_IN },
+	},
+	exit: {
+		opacity: 0,
+		transition: { duration: DURATION_OUT, delay: DELAY_OUT },
+	},
 };
 </script>
 
@@ -64,6 +72,23 @@ const itemVariants = {
 								{{ item.label }}
 							</UButton>
 						</NuxtLink>
+					</motion.div>
+					<motion.div
+						v-if="gi === useMenuSliderGroups().length - 1"
+						:variants="itemVariants"
+						key="last-menu"
+					>
+						<div class="flex justify-between pl-[10px] py-3">
+							<div>
+								<ULink to="/login" class="cursor-pointer"
+									>Login</ULink
+								>
+							</div>
+
+							<div>
+								<ColorModeButton />
+							</div>
+						</div>
 					</motion.div>
 				</motion.div>
 			</AnimatePresence>
