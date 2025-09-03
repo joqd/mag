@@ -122,8 +122,11 @@ const menuItems = computed<DropdownMenuItem[]>(() =>
 				key="overlay"
 				class="fixed inset-0 bg-black/60"
 				:initial="{ opacity: 0 }"
-				:animate="{ opacity: 1, transition: { duration: 0.5 } }"
-				:exit="{ opacity: 0, transition: { duration: 0.5 } }"
+				:animate="{
+					opacity: 1,
+					transition: { duration: 0.3 },
+				}"
+				:exit="{ opacity: 0, transition: { duration: 0.3 } }"
 				@click="toggleMenu"
 			/>
 		</AnimatePresence>
@@ -137,11 +140,11 @@ const menuItems = computed<DropdownMenuItem[]>(() =>
 				:initial="{ y: '-100%' }"
 				:animate="{
 					y: 0,
-					transition: { duration: 0.5, ease: 'easeIn' },
+					transition: { duration: 0.3, ease: [0.72, 0, 0.34, 1] },
 				}"
 				:exit="{
 					y: '-100%',
-					transition: { duration: 0.5, ease: 'easeOut' },
+					transition: { duration: 0.3, ease: [0.72, 0, 0.34, 1] },
 				}"
 			>
 				<div class="w-[480px] px-[20px] mx-auto space-y-5">
