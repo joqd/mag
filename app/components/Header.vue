@@ -23,7 +23,7 @@ function toggleMenu() {
 function closeMenu() {
 	if (isMenuOpen.value) {
 		isMenuOpen.value = false;
-		document.body.classList.remove("overflow-hidden");
+		setBodyLock(false);
 	}
 }
 
@@ -65,10 +65,10 @@ const menuItems = computed<DropdownMenuItem[]>(() =>
 					:while-hover="{ scale: 1.05 }"
 					:while-press="{ scale: 0.95 }"
 				>
-					<NuxtLink to="/" @click.capture="closeMenu">
+					<NuxtLink>
 						<UAvatar
-							src="/images/logo.jpg"
-							class="w-[60px] h-[60px] grayscale"
+							src="/images/al.jpg"
+							class="w-[60px] h-[60px] grayscale cursor-pointer"
 						/>
 					</NuxtLink>
 				</motion.div>
