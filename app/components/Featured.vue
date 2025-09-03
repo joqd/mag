@@ -75,7 +75,7 @@ watch(
 		<swiper-container
 			ref="containerRef"
 			effect="cards"
-			:touch-ratio="0.7"
+			:touch-ratio="0.5"
 			:threshold="40"
 			:long-swipes-ratio="0.5"
 			:long-swipes-ms="500"
