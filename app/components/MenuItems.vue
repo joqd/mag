@@ -4,8 +4,8 @@ const { isMenuSliderOpen, closeMenuSlider } = useMenuSlider();
 
 const DELAY_IN = 0.4;
 const DELAY_OUT = 0;
-const DURATION_IN = 0.5;
-const DURATION_OUT = 0.5;
+const DURATION_IN = 0.4;
+const DURATION_OUT = 0.2;
 const STAGGER_IN = 0;
 const STAGGER_OUT = 0;
 
@@ -42,7 +42,7 @@ const itemVariants = {
 			v-for="(items, gi) in useMenuSliderGroups()"
 			:key="gi"
 			:class="gi === 0 ? 'sm:hidden' : ''"
-			class="space-y-0.5"
+			class=""
 		>
 			<AnimatePresence :initial="false" mode="wait">
 				<motion.div
@@ -52,6 +52,7 @@ const itemVariants = {
 					initial="hidden"
 					animate="show"
 					exit="exit"
+					class="space-y-0.5"
 				>
 					<motion.div
 						v-for="item in items"

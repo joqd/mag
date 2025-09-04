@@ -12,7 +12,7 @@ const { isMenuSliderOpen, closeMenuSlider } = useMenuSlider();
 			:initial="{ opacity: 0 }"
 			:animate="{
 				opacity: 1,
-				transition: { duration: 0.5 },
+				transition: { duration: 0.6 },
 			}"
 			:exit="{
 				opacity: 0,
@@ -28,15 +28,15 @@ const { isMenuSliderOpen, closeMenuSlider } = useMenuSlider();
 		<motion.div
 			v-show="isMenuSliderOpen"
 			key="panel"
-			class="fixed z-[41] top-0 inset-x-0 min-h-40 bg-default pointer-events-auto w-full pt-[115px]"
+			class="fixed z-[41] top-0 inset-x-0 min-h-[264px] bg-default pointer-events-auto w-full pt-[115px]"
 			:initial="{ y: '-100%' }"
 			:animate="{
 				y: 0,
-				transition: { duration: 0.8, ease: 'easeOut' },
+				transition: { duration: 0.6, ease: 'easeOut' },
 			}"
 			:exit="{
 				y: '-100%',
-				transition: { duration: 0.4, ease: 'easeIn' },
+				transition: { duration: 0.3, ease: 'easeIn' },
 			}"
 		>
 			<div class="max-w-[480px] px-[20px] mx-auto space-y-4">
