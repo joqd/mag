@@ -1,29 +1,47 @@
-<script setup lang="ts">
+<script setup>
 const colorMode = useColorMode();
+const order = ["light", "system", "dark"];
 
-const isDark = computed({
-	get: () => colorMode.value === "dark",
-	set: (v) => {
-		colorMode.preference = v ? "dark" : "light";
-		// brief smooth color change
-		const root = document.documentElement;
-		root.classList.add("theme-anim");
-		setTimeout(() => root.classList.remove("theme-anim"), 250);
-	},
+const current = computed(() =>
+	colorMode.preference === "system" ? "system" : colorMode.preference,
+);
+
+const cycle = () => {
+	const i = order.indexOf(current.value);
+	colorMode.preference = order[(i + 1) % order.length];
+};
+
+const label = computed(() => `Theme: ${current.value}`);
+
+const leftPx = computed(() => {
+	if (current.value === "light") return "4px";
+	if (current.value === "system") return "50%";
+	return "calc(100% - 18px)";
 });
+const translateX = computed(() => (current.value === "system" ? "-50%" : "0"));
 </script>
 
 <template>
-	<ClientOnly v-if="!colorMode?.forced">
-		<USwitch
-			v-model="isDark"
-			color="neutral"
-			size="sm"
-			aria-label="Toggle dark mode"
-			class="data-[checked=true]:[&_.ui-icon]:rotate-0 data-[checked=false]:[&_.ui-icon]:rotate-0"
-		/>
-		<template #fallback>
-			<div><USkeleton class="h-4 w-8" /></div>
-		</template>
-	</ClientOnly>
+	<button
+		class="relative w-[36px] h-[22px] py-[2px] px-[4px] rounded-full select-none cursor-pointer dark:bg-neutral-800 bg-neutral-200"
+		:aria-label="label"
+		@click="cycle"
+	>
+		<span
+			class="pointer-events-none absolute inset-y-0 flex items-center transition-[left,transform] duration-200"
+			:style="{ left: leftPx, transform: `translateX(${translateX})` }"
+		>
+			<IconsSun
+				v-if="current === 'light'"
+				class="block w-[14px] h-[14px] leading-none"
+			/>
+			<IconsAutoTheme
+				v-else-if="current === 'system'"
+				class="block w-[14px] h-[14px] leading-none"
+			/>
+			<IconsMoon v-else class="block w-[14px] h-[14px] leading-none" />
+		</span>
+
+		<span class="sr-only">{{ label }}</span>
+	</button>
 </template>

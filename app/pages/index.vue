@@ -24,5 +24,14 @@
 				<Tags />
 			</div>
 		</section>
+
+		<div class="h-[40px]"></div>
+
+		<!-- posts list -->
+		<section>
+			<div>
+				<PostList />
+			</div>
+		</section>
 	</section>
 </template>

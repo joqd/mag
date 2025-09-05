@@ -19,7 +19,7 @@ const scrollIndicator = {
 </script>
 
 <template>
-	<UApp>
+	<UApp :data-theme="isDarkMode() ? 'dark' : null">
 		<div class="flex flex-col min-h-screen">
 			<motion.div
 				class="z-[100]"
