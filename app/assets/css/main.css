@@ -2,7 +2,7 @@
 @import "@nuxt/ui";
 
 @theme static {
-	--font-sans: "Poppins", sans-serif;
+	--font-sans: "Geist", sans-serif;
 }
 
 .router-link-active {

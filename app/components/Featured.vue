@@ -89,43 +89,7 @@ watch(
 				class="border-2 border-default px-[20px] py-[16px] bg-default rounded-xl w-[440px] h-[200px]"
 			>
 				<div class="flex flex-col h-full justify-between">
-					<div>
-						<div
-							class="text-md font-bold line-clamp-1 cursor-default"
-						>
-							Effective Python Testing: Strategies and Tools
-						</div>
-						<div
-							class="text-xs cursor-default opacity-90"
-						>
-							<UButton
-								color="neutral"
-								variant="link"
-								class="p-0 cursor-pointer font-normal underline"
-								>Tools</UButton
-							>
-							- December 2, 2023
-						</div>
-					</div>
-
-					<p
-						class="line-clamp-3 text-sm opacity-90 min-h-0 font-medium cursor-default"
-					>
-						Cover the importance of testing in Python development,
-						exploring tools and frameworks for unit testing,
-						integration testing, and TDD
-					</p>
-
-					<div>
-						<UButton
-							color="neutral"
-							variant="soft"
-							size="sm"
-							class="cursor-pointer"
-						>
-							Read More
-						</UButton>
-					</div>
+					<PostCard />
 				</div>
 			</swiper-slide>
 		</swiper-container>

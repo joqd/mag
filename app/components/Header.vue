@@ -14,7 +14,7 @@ const { isMenuSliderOpen, closeMenuSlider, toggleMenuSlider } = useMenuSlider();
 					:while-hover="{ scale: 1.05 }"
 					:while-press="{ scale: 0.95 }"
 				>
-					<NuxtLink>
+					<NuxtLink to="/" @click="closeMenuSlider">
 						<UAvatar
 							src="/images/al.jpg"
 							class="w-[60px] h-[60px] grayscale cursor-pointer"
