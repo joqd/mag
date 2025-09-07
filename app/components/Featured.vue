@@ -54,7 +54,7 @@ watch(
 				class="w-[30px] h-[30px] cursor-pointer p-0 m-0 items-center justify-center"
 				:disabled="isBeginning"
 			>
-				<IconsChevronLeft class="w-[14px] h-[14px]" />
+				<IconsLeft class="w-[14px] h-[14px]" />
 			</UButton>
 			<UButton
 				@click="swiper.next()"
@@ -63,7 +63,7 @@ watch(
 				class="w-[30px] h-[30px] cursor-pointer p-0 m-0 items-center justify-center"
 				:disabled="isEnd"
 			>
-				<IconsChevronRight class="w-[14px] h-[14px]" />
+				<IconsRight class="w-[14px] h-[14px]" />
 			</UButton>
 		</div>
 	</div>
@@ -86,7 +86,7 @@ watch(
 			<swiper-slide
 				v-for="(slide, idx) in slides"
 				:key="idx"
-				class="border-2 border-default px-[20px] py-[16px] bg-default rounded-xl w-[440px] h-[200px]"
+				class="border-2 border-default px-[20px] py-[16px] bg-default rounded-xl w-[440px]"
 			>
 				<div class="flex flex-col h-full justify-between">
 					<PostCard />
