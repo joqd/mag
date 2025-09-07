@@ -80,15 +80,18 @@ watch(
 			:long-swipes-ratio="0.5"
 			:long-swipes-ms="500"
 			:short-swipes="false"
+			:round-lengths="true"
 			cards-effect-slide-shadows="false"
 			class="w-full [contain:layout] [overflow:visible]"
 		>
 			<swiper-slide
 				v-for="(slide, idx) in slides"
 				:key="idx"
-				class="border-2 border-default px-[20px] py-[16px] bg-default rounded-xl w-[440px]"
+				class="border-2 border-default px-[20px] py-[16px] bg-default rounded-xl w-[440px] [will-change:transform] [backface-visibility:hidden] [transform:translateZ(0)] [transform-style:flat]"
 			>
-				<div class="flex flex-col h-full justify-between">
+				<div
+					class="flex flex-col h-full justify-between [contain:paint] [transform-style:flat]"
+				>
 					<PostCard />
 				</div>
 			</swiper-slide>
