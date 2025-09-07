@@ -13,8 +13,7 @@ const props = withDefaults(defineProps<Props>(), {
 		<div class="space-y-1">
 			<div class="text-md font-bold cursor-default leading-5">
 				<NuxtLink to="/pages/" class="link"
-					>Effective Python Testing: Strategies and Tools, and it's
-					not end!</NuxtLink
+					>Effective Python Testing: Strategies and Tools</NuxtLink
 				>
 			</div>
 			<div class="text-xs cursor-default opacity-90">
@@ -23,7 +22,7 @@ const props = withDefaults(defineProps<Props>(), {
 			</div>
 		</div>
 
-		<div class="text-sm font-medium">
+		<div class="text-sm font-medium opacity-90">
 			Cover the importance of testing in Python development, exploring
 			tools and frameworks for unit testing, integration testing, and TDD.
 		</div>

@@ -21,7 +21,7 @@ const allPostsLoaded = ref(false);
 		class="w-full mt-[12px] px-[20px] py-[16px] border-2 border-default rounded-xl space-y-5"
 	>
 		<!-- posts -->
-		<div class="space-y-3">
+		<div class="space-y-4">
 			<PostCard />
 			<USeparator size="sm" />
 			<PostCard featured />
