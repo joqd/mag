@@ -9,32 +9,6 @@
 	opacity: 1;
 }
 
-@theme {
-	--ui-color-neutral-50: oklch(98.5% 0 0);
-	--ui-color-neutral-100: oklch(97% 0 0);
-	--ui-color-neutral-200: oklch(92.2% 0 0);
-	--ui-color-neutral-300: oklch(87% 0 0);
-	--ui-color-neutral-400: oklch(70.8% 0 0);
-	--ui-color-neutral-500: oklch(55.6% 0 0);
-	--ui-color-neutral-600: oklch(43.9% 0 0);
-	--ui-color-neutral-700: oklch(37.1% 0 0);
-	--ui-color-neutral-800: oklch(26.9% 0 0);
-	--ui-color-neutral-900: oklch(20.5% 0 0);
-	--ui-color-neutral-950: oklch(14.5% 0 0);
-
-	--ui-color-primary-50: oklch(98.4% 0.019 200.873);
-	--ui-color-primary-100: oklch(95.6% 0.045 203.388);
-	--ui-color-primary-200: oklch(91.7% 0.08 205.041);
-	--ui-color-primary-300: oklch(86.5% 0.127 207.078);
-	--ui-color-primary-400: oklch(78.9% 0.154 211.53);
-	--ui-color-primary-500: oklch(71.5% 0.143 215.221);
-	--ui-color-primary-600: oklch(60.9% 0.126 221.723);
-	--ui-color-primary-700: oklch(52% 0.105 223.128);
-	--ui-color-primary-800: oklch(45% 0.085 224.283);
-	--ui-color-primary-900: oklch(39.8% 0.07 227.392);
-	--ui-color-primary-950: oklch(30.2% 0.056 229.695);
-}
-
 /* Hide scroll bar */
 ::-webkit-scrollbar {
 	width: 0;

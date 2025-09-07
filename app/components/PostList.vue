@@ -34,7 +34,7 @@ const allPostsLoaded = ref(false);
 		<UButton
 			:disabled="allPostsLoaded"
 			variant="solid"
-			color="neutral"
+			color="primary"
 			class="w-full cursor-pointer"
 		>
 			<span class="mx-auto">Load More</span>
