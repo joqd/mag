@@ -23,3 +23,8 @@ html,
 body {
 	-ms-overflow-style: none;
 }
+
+
+.link {
+	@apply hover:text-primary hover:underline
+}
