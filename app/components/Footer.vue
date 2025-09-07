@@ -11,12 +11,10 @@ const year = new Date().getFullYear();
 		>
 			<div class="text-sm">
 				© {{ year }} Joqd - Made With Love By
-				<UButton
-					variant="link"
-					color="neutral"
-					to="https://github.com/joqd"
-					class="p-0 underline"
-					>ASH</UButton
+				<a
+					href="https://github.com/joqd"
+					class="link underline"
+					>ASH</a
 				>
 			</div>
 			<div>
