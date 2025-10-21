@@ -11,10 +11,19 @@ const props = withDefaults(defineProps<Props>(), {
 <template>
 	<div class="space-y-3">
 		<div class="space-y-1">
-			<div class="text-md font-bold cursor-default leading-5">
-				<NuxtLink to="/pages/" class="link"
-					>Effective Python Testing: Strategies and Tools</NuxtLink
-				>
+			<div class="text-md font-bold cursor-default leading-5 flex items-center space-x-2">
+				<!-- <div>
+					<UAvatar
+						size="sm"
+						class="rounded-none squircle"
+						src="https://avatars.githubusercontent.com/u/739984?v=4"
+					/>
+				</div> -->
+				<div>
+					<NuxtLink to="/pages/" class="link"
+						>Sample title, Hello World</NuxtLink
+					>
+				</div>
 			</div>
 			<div class="text-xs cursor-default opacity-90">
 				<NuxtLink to="/tags/" class="link">Tools</NuxtLink>
