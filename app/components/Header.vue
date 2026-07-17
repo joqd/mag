@@ -16,7 +16,7 @@ const { isMenuSliderOpen, closeMenuSlider, toggleMenuSlider } = useMenuSlider();
 				>
 					<NuxtLink to="/" @click="closeMenuSlider">
 						<UAvatar
-							src="/images/al.jpg"
+							src="/images/me.jpg"
 							class="w-[60px] h-[60px] grayscale cursor-pointer"
 						/>
 					</NuxtLink>

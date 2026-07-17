@@ -1,7 +1,7 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-	modules: ["@nuxt/ui", "nuxt-swiper", "motion-v/nuxt"],
+	modules: ["@nuxt/ui", "nuxt-swiper", "motion-v/nuxt", "@nuxt/content"],
 	compatibilityDate: "2025-07-15",
 	devtools: { enabled: true },
 	typescript: { strict: true },
