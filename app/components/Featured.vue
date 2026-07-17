@@ -1,7 +1,22 @@
 <script setup lang="ts">
-const containerRef = ref(null);
-const slides = ref(Array.from({ length: 5 }));
+interface Post {
+	title?: string;
+	description?: string;
+	path?: string;
+	date?: string;
+	tags?: string[];
+	featured?: boolean;
+}
 
+interface Props {
+	posts?: Post[];
+}
+
+const props = withDefaults(defineProps<Props>(), {
+	posts: () => [],
+});
+
+const containerRef = ref(null);
 const swiper = useSwiper(containerRef);
 
 const isBeginning = ref(true);
@@ -46,7 +61,7 @@ watch(
 		<h1 class="text-sm font-medium opacity-70 flex items-center px-[6px]">
 			Featured
 		</h1>
-		<div class="space-x-2 opacity-70">
+		<div v-if="props.posts.length" class="space-x-2 opacity-70">
 			<UButton
 				@click="swiper.prev()"
 				color="neutral"
@@ -67,34 +82,45 @@ watch(
 			</UButton>
 		</div>
 	</div>
-	<div v-if="isLoading" class="mt-2">
-		<USkeleton class="h-[191.46px] w-full rounded-xl" />
+
+	<!-- empty state -->
+	<div
+		v-if="!props.posts.length"
+		class="mt-2 w-full border-2 border-dashed border-default rounded-xl px-[20px] py-[24px] text-sm opacity-70 text-center"
+	>
+		No featured posts yet.
 	</div>
 
-	<ClientOnly class="mt-2">
-		<swiper-container
-			ref="containerRef"
-			effect="cards"
-			:touch-ratio="0.5"
-			:threshold="40"
-			:long-swipes-ratio="0.5"
-			:long-swipes-ms="500"
-			:short-swipes="false"
-			:round-lengths="true"
-			cards-effect-slide-shadows="false"
-			class="w-full [contain:layout] [overflow:visible]"
-		>
-			<swiper-slide
-				v-for="(slide, idx) in slides"
-				:key="idx"
-				class="border-2 border-default px-[20px] py-[16px] bg-default rounded-xl w-[440px] [will-change:transform] [backface-visibility:hidden] [transform:translateZ(0)] [transform-style:flat]"
+	<template v-else>
+		<div v-if="isLoading" class="mt-2">
+			<USkeleton class="h-[191.46px] w-full rounded-xl" />
+		</div>
+
+		<ClientOnly class="mt-2">
+			<swiper-container
+				ref="containerRef"
+				effect="cards"
+				:touch-ratio="0.5"
+				:threshold="40"
+				:long-swipes-ratio="0.5"
+				:long-swipes-ms="500"
+				:short-swipes="false"
+				:round-lengths="true"
+				cards-effect-slide-shadows="false"
+				class="w-full [contain:layout] [overflow:visible]"
 			>
-				<div
-					class="flex flex-col h-full justify-between [contain:paint] [transform-style:flat]"
+				<swiper-slide
+					v-for="post in props.posts"
+					:key="post.path ?? post.title"
+					class="border-2 border-default px-[20px] py-[16px] bg-default rounded-xl w-[440px] [will-change:transform] [backface-visibility:hidden] [transform:translateZ(0)] [transform-style:flat]"
 				>
-					<PostCard />
-				</div>
-			</swiper-slide>
-		</swiper-container>
-	</ClientOnly>
+					<div
+						class="flex flex-col h-full justify-between [contain:paint] [transform-style:flat]"
+					>
+						<PostCard :post="post" :featured="true" />
+					</div>
+				</swiper-slide>
+			</swiper-container>
+		</ClientOnly>
+	</template>
 </template>

@@ -2,6 +2,7 @@
 title: Why I Started This Project
 description: A personal introduction to who I am and why I began this blog and website.
 date: 2026-07-17
+tags: [Personal]
 featured: false
 ---
 
