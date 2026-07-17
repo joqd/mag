@@ -12,8 +12,4 @@ export default defineNuxtConfig({
 	app: {
 		pageTransition: { name: "page", mode: "out-in" },
 	},
-	runtimeConfig: {
-		apiBase: process.env.API_BASE || "http://127.0.0.1:8000/api/",
-		public: {},
-	},
 });
