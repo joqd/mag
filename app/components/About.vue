@@ -2,7 +2,7 @@
 	<div>
 		<h1 class="font-bold text-lg">HELLO THERE</h1>
 
-		<p class="mt-2 text-start opacity-80">
+		<p class="mt-2 opacity-80 text-justify">
 			My name is Abolfazl, a programmer from Iran who tries to keep a
 			happy spirit despite everything. Here, I share thoughts and
 			experiences about programming, games, chess, history, and whatever

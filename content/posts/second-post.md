@@ -1,11 +1,11 @@
 ---
-title: Why I Chose NuxtJS for This Blog and Resume Website
+title: Why I Chose NuxtJS for This Blog?
 description: A personal note about why I love NuxtJS and the stack I use for this project.
 date: 2026-07-17
 featured: true
 ---
 
-# Why I Chose NuxtJS for This Blog and Resume Website
+### Why I Chose NuxtJS for This Blog and Resume Website
 
 I chose **NuxtJS** for this project because it feels like the perfect fit for what I wanted to build: a modern, clean, and flexible website for my blog and resume. I love how Nuxt combines simplicity with power. It gives me a smooth developer experience while still allowing me to create something beautiful and professional.
 

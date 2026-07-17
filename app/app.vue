@@ -28,7 +28,7 @@ const scrollIndicator = {
 			/>
 			<Header />
 
-			<main class="flex-1 w-full">
+			<main class="flex-1 w-full text-justify">
 				<div class="max-w-[480px] px-[20px] mx-auto">
 					<NuxtPage />
 				</div>

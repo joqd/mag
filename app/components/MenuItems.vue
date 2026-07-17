@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { motion, AnimatePresence, delay } from "motion-v";
+import { motion, AnimatePresence } from "motion-v";
 const { isMenuSliderOpen, closeMenuSlider } = useMenuSlider();
 
 const DELAY_IN = 0.4;
