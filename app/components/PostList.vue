@@ -1,4 +1,19 @@
 <script setup lang="ts">
+interface Post {
+	title?: string;
+	description?: string;
+	path?: string;
+	date?: string;
+}
+
+interface Props {
+	posts?: Post[];
+}
+
+const props = withDefaults(defineProps<Props>(), {
+	posts: () => [],
+});
+
 const allPostsLoaded = ref(false);
 </script>
 
@@ -21,14 +36,16 @@ const allPostsLoaded = ref(false);
 		class="w-full mt-[12px] px-[20px] py-[16px] border-2 border-default rounded-xl space-y-5"
 	>
 		<!-- posts -->
-		<div class="space-y-4">
-			<PostCard />
-			<USeparator size="sm" />
-			<PostCard featured />
-			<USeparator size="sm" />
-			<PostCard />
-			<USeparator size="sm" />
+		<div v-if="props.posts.length" class="space-y-4">
+			<template
+				v-for="(post, index) in props.posts"
+				:key="post.path ?? post.title"
+			>
+				<PostCard :post="post" :featured="index === 0" />
+				<USeparator v-if="index < props.posts.length - 1" size="sm" />
+			</template>
 		</div>
+		<div v-else class="text-sm opacity-70">No posts yet.</div>
 
 		<!-- load more -->
 		<UButton

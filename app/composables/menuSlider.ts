@@ -1,7 +1,7 @@
 export const useNavbarItems = () => [
 	{ label: "Home", to: "/" },
 	{ label: "Now", to: "/now" },
-	{ label: "Blog", to: "/blog" },
+	{ label: "Posts", to: "/posts" },
 ];
 
 export const useMenuSliderGroups = () => {

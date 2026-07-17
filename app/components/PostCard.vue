@@ -1,39 +1,42 @@
 <script setup lang="ts">
+interface Post {
+	title?: string;
+	description?: string;
+	path?: string;
+	date?: string;
+}
+
 interface Props {
 	featured?: boolean;
+	post?: Post;
 }
 
 const props = withDefaults(defineProps<Props>(), {
 	featured: false,
+	post: () => ({}),
 });
 </script>
 
 <template>
 	<div class="space-y-3">
 		<div class="space-y-1">
-			<div class="text-md font-bold cursor-default leading-5 flex items-center space-x-2">
-				<!-- <div>
-					<UAvatar
-						size="sm"
-						class="rounded-none squircle"
-						src="https://avatars.githubusercontent.com/u/739984?v=4"
-					/>
-				</div> -->
+			<div
+				class="text-md font-bold cursor-default leading-5 flex items-center space-x-2"
+			>
 				<div>
-					<NuxtLink to="/pages/" class="link"
-						>Sample title, Hello World</NuxtLink
-					>
+					<NuxtLink :to="props.post?.path ?? '/posts/'" class="link">
+						{{ props.post?.title || "Untitled Post" }}
+					</NuxtLink>
 				</div>
 			</div>
 			<div class="text-xs cursor-default opacity-90">
-				<NuxtLink to="/tags/" class="link">Tools</NuxtLink>
-				— December 2, 2023
+				<span v-if="props.post?.date">{{ props.post.date }}</span>
+				<span v-else>Recently published</span>
 			</div>
 		</div>
 
 		<div class="text-sm font-medium opacity-90">
-			Cover the importance of testing in Python development, exploring
-			tools and frameworks for unit testing, integration testing, and TDD.
+			{{ props.post?.description || "No description available yet." }}
 		</div>
 
 		<div class="flex space-x-1">
@@ -61,14 +64,16 @@ const props = withDefaults(defineProps<Props>(), {
 			</div>
 
 			<div>
-				<UButton
-					color="neutral"
-					variant="soft"
-					size="sm"
-					class="cursor-pointer"
-				>
-					Read More
-				</UButton>
+				<NuxtLink :to="props.post?.path ?? '/posts/'">
+					<UButton
+						color="neutral"
+						variant="soft"
+						size="sm"
+						class="cursor-pointer"
+					>
+						Read More
+					</UButton>
+				</NuxtLink>
 			</div>
 		</div>
 	</div>
