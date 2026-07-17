@@ -12,6 +12,14 @@ featured: false
 
 My name is Abolfazl, and I’m a programmer from Iran. I’ve always been someone who enjoys building things, learning new ideas, and sharing what I discover along the way. Life has taught me that even small thoughts, experiments, and experiences can become meaningful when they are written down and shared with others.
 
+```py
+def main():
+	print('hello world')
+
+if __name__ == '__main__':
+	main()
+```
+
 That is one of the main reasons I started this project. I wanted to create a place where I could collect my thoughts, document my learning, and express myself more freely. This blog is not only about technology or programming; it is also about the things that shape me as a person: curiosity, creativity, growth, and the desire to keep moving forward.
 
 I started this website because I wanted a space that feels personal and honest. A place where I can write about programming, games, chess, history, and the many other topics that spark my interest. I also wanted to build something that reflects my personality: calm, thoughtful, and hopeful, even when life is difficult.
