@@ -34,7 +34,7 @@ useHead(() => ({
 			<p v-if="post.date" class="text-xs opacity-70">{{ post.date }}</p>
 		</div>
 
-		<article class="prose prose-neutral max-w-none dark:prose-invert">
+		<article class="prose prose-neutral max-w-none dark:prose-invert text-justify">
 			<ContentRenderer :value="post" />
 		</article>
 	</div>
@@ -42,7 +42,7 @@ useHead(() => ({
 	<div v-else class="space-y-3">
 		<p class="text-sm opacity-70">This post could not be found.</p>
 		<NuxtLink to="/posts/" class="text-primary underline">
-			Return to the blog
+			Return to the posts
 		</NuxtLink>
 	</div>
 </template>

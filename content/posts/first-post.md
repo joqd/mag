@@ -5,7 +5,9 @@ date: 2026-07-17
 featured: false
 ---
 
-# Why I Started This Project
+![my image](/images/me.jpg)
+
+### Why I Started This Project
 
 My name is Abolfazl, and I’m a programmer from Iran. I’ve always been someone who enjoys building things, learning new ideas, and sharing what I discover along the way. Life has taught me that even small thoughts, experiments, and experiences can become meaningful when they are written down and shared with others.
 

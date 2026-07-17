@@ -16,15 +16,30 @@ const props = withDefaults(defineProps<Props>(), {
 	posts: () => [],
 });
 
-const allPostsLoaded = ref(false);
+const PAGE_SIZE = 5;
+const visibleCount = ref(PAGE_SIZE);
+
+const visiblePosts = computed(() => props.posts.slice(0, visibleCount.value));
+const allPostsLoaded = computed(() => visibleCount.value >= props.posts.length);
+const showLoadMore = computed(() => props.posts.length > PAGE_SIZE);
+
+function loadMore() {
+	visibleCount.value = Math.min(
+		visibleCount.value + PAGE_SIZE,
+		props.posts.length,
+	);
+}
 </script>
 
 <template>
 	<div class="flex justify-between">
-		<h1 v-if="props.show_label" class="text-sm font-medium opacity-70 flex items-center px-[6px]">
+		<h1
+			v-if="props.show_label"
+			class="text-sm font-medium opacity-70 flex items-center px-[6px]"
+		>
 			Latest
 		</h1>
-		<div v-if="props.show_search_icon" >
+		<div v-if="props.show_search_icon">
 			<UButton
 				variant="ghost"
 				color="neutral"
@@ -38,23 +53,25 @@ const allPostsLoaded = ref(false);
 		class="w-full mt-[12px] px-[20px] py-[16px] border-2 border-default rounded-xl space-y-5"
 	>
 		<!-- posts -->
-		<div v-if="props.posts.length" class="space-y-4">
+		<div v-if="visiblePosts.length" class="space-y-4">
 			<template
-				v-for="(post, index) in props.posts"
+				v-for="(post, index) in visiblePosts"
 				:key="post.path ?? post.title"
 			>
 				<PostCard :post="post" :featured="index === 0" />
-				<USeparator v-if="index < props.posts.length - 1" size="sm" />
+				<USeparator v-if="index < visiblePosts.length - 1" size="sm" />
 			</template>
 		</div>
 		<div v-else class="text-sm opacity-70">No posts yet.</div>
 
 		<!-- load more -->
 		<UButton
+			v-if="showLoadMore"
 			:disabled="allPostsLoaded"
 			variant="solid"
 			color="primary"
 			class="w-full cursor-pointer"
+			@click="loadMore"
 		>
 			<span class="mx-auto">Load More</span>
 		</UButton>
