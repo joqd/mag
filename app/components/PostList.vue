@@ -8,6 +8,8 @@ interface Post {
 
 interface Props {
 	posts?: Post[];
+	show_label?: boolean;
+	show_search_icon?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -19,10 +21,10 @@ const allPostsLoaded = ref(false);
 
 <template>
 	<div class="flex justify-between">
-		<h1 class="text-sm font-medium opacity-70 flex items-center px-[6px]">
+		<h1 v-if="props.show_label" class="text-sm font-medium opacity-70 flex items-center px-[6px]">
 			Latest
 		</h1>
-		<div>
+		<div v-if="props.show_search_icon" >
 			<UButton
 				variant="ghost"
 				color="neutral"
