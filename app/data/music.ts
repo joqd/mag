@@ -2,15 +2,15 @@ import type { Track } from "~/types/track";
 
 export const tracks: Track[] = [
 	{
-		title: "Track One",
-		artist: "Artist Name",
-		src: "/music/sample.mp3",
-		cover: "/images/covers/sample.jpg",
+		title: "Moth To A Flame",
+		artist: "Weekend",
+		src: "/music/moth-to-a-flame.mp3",
+		cover: "/images/covers/moth-to-a-flame.jpg",
 	},
 	{
-		title: "Track Two",
-		artist: "Artist Name",
-		src: "/music/Joji - Slow Dancing In The Dark.mp3",
-		cover: "/images/covers/sample.jpg",
+		title: "Apocalypse",
+		artist: "Cigarettes After Sex",
+		src: "/music/apocalypse.mp3",
+		cover: "/images/covers/apocalypse.jpeg",
 	},
 ];
