@@ -1,13 +1,22 @@
+<!-- app/components/About.vue -->
 <template>
 	<div>
 		<h1 class="font-bold text-lg">HELLO THERE</h1>
 
 		<p class="mt-2 opacity-80 text-justify">
-			My name is Abolfazl, a programmer from Iran who tries to keep a
-			happy spirit despite everything. Here, I share thoughts and
-			experiences about programming, games, chess, history, and whatever
-			else sparks my curiosity.
+			I'm Abolfazl, a programmer from Iran. Most days I'm building
+			software. The rest of the time I'm wandering through history books,
+			chess positions, video games, and whatever catches my curiosity
+			next.
 		</p>
+
+		<NuxtLink
+			to="/resume"
+			class="mt-2 inline-flex items-center gap-1 text-sm text-primary hover:underline"
+		>
+			More about me &amp; my work
+			<Icon size="14" name="i-lucide-arrow-right" />
+		</NuxtLink>
 
 		<ul class="mt-5 space-x-2 space-y-2">
 			<li class="inline">
