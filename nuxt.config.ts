@@ -17,22 +17,4 @@ export default defineNuxtConfig({
 		telegramChatId: "",
 		httpProxy: "",
 	},
-	nitro: {
-		preset: "cloudflare_module",
-		cloudflare: {
-			deployConfig: true,
-			nodeCompat: true,
-			wrangler: {
-				name: "mag",
-				compatibility_flags: ["nodejs_compat"],
-				d1_databases: [
-					{
-						binding: "nuxt_content_db",
-						database_name: "nuxt-content-db",
-						database_id: "565a1ab6-dc89-4831-ba0d-0af63ac899ad",
-					},
-				],
-			},
-		},
-	},
 });
