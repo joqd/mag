@@ -8,12 +8,12 @@ export const skillGroups: SkillGroup[] = [
 	{
 		category: "Languages & Frameworks",
 		icon: "i-lucide-code-2",
-		items: ["Python", "Django", "Django REST Framework", "FastAPI"],
+		items: ["Python", "Django", "Go", "Fiber/Echo", "Typescript", "NuxtJS"],
 	},
 	{
 		category: "Data & Storage",
 		icon: "i-lucide-database",
-		items: ["PostgreSQL", "Redis", "SQLite"],
+		items: ["PostgreSQL", "Redis", "MongoDB"],
 	},
 	{
 		category: "Infrastructure",
