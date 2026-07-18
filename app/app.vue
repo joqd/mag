@@ -34,6 +34,7 @@ const scrollIndicator = {
 				</div>
 			</main>
 			<Lightbox />
+			<GlobalPlayer />
 
 			<Footer class="mt-auto" />
 		</div>

@@ -45,6 +45,18 @@
 					<div>Lichess</div>
 				</UButton>
 			</li>
+			<li class="inline">
+				<UButton
+					color="neutral"
+					variant="soft"
+					class="cursor-pointer"
+					size="sm"
+					to="/music"
+				>
+					<IconsMusic class="w-4 h-4" />
+					<div>Playlist</div>
+				</UButton>
+			</li>
 		</ul>
 	</div>
 </template>
