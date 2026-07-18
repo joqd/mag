@@ -1,9 +1,12 @@
 <!-- app/pages/resume.vue -->
 <script setup lang="ts">
-import type { TimelineItem } from "@nuxt/ui";
 import { journey } from "~/data/journey";
 import { skillGroups } from "~/data/skills";
 import { projects } from "~/data/projects";
+
+useHead({
+	title: "Resume | Abolfazl's Blog",
+});
 
 const featuredProjects = computed(() => projects.slice(0, 3));
 

@@ -1,4 +1,8 @@
 <script setup lang="ts">
+useHead({
+	title: "Abolfazl's Blog",
+});
+
 interface Post {
 	title?: string;
 	description?: string;

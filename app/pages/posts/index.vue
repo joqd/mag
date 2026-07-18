@@ -2,6 +2,10 @@
 const { data: posts } = await useAsyncData("posts", () =>
 	queryCollection("posts").all(),
 );
+
+useHead({
+	title: "Posts | Abolfazl's Blog",
+});
 </script>
 
 <template>
