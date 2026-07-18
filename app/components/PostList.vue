@@ -32,7 +32,7 @@ function loadMore() {
 </script>
 
 <template>
-	<div class="flex justify-between">
+	<div v-if="props.show_label || props.show_search_icon" class="flex justify-between mb-[12px]">
 		<h1
 			v-if="props.show_label"
 			class="text-sm font-medium opacity-70 flex items-center px-[6px]"
@@ -50,7 +50,7 @@ function loadMore() {
 		</div>
 	</div>
 	<div
-		class="w-full mt-[12px] px-[20px] py-[16px] border-2 border-default rounded-xl space-y-5"
+		class="w-full px-[20px] py-[16px] border-2 border-default rounded-xl space-y-5"
 	>
 		<!-- posts -->
 		<div v-if="visiblePosts.length" class="space-y-4">

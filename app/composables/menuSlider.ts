@@ -9,9 +9,8 @@ export const useMenuSliderGroups = () => {
 	return [
 		navbarItems,
 		[
-			{ label: "About", to: "/about" },
+			{ label: "Projects", to: "/projects" },
 			{ label: "Contact", to: "/contact" },
-			{ label: "Resume", to: "/resume" },
 		],
 	];
 };

@@ -81,9 +81,7 @@ const itemVariants = {
 					>
 						<div class="flex justify-between pl-[10px] py-3">
 							<div>
-								<ULink to="/login" class="cursor-pointer"
-									>Login</ULink
-								>
+								
 							</div>
 
 							<div>
