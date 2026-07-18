@@ -37,7 +37,7 @@ function loadMore() {
 			v-if="props.show_label"
 			class="text-sm font-medium opacity-70 flex items-center px-[6px]"
 		>
-			Latest
+			Latest Posts
 		</h1>
 		<div v-if="props.show_search_icon">
 			<UButton

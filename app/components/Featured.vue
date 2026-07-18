@@ -59,7 +59,7 @@ watch(
 <template>
 	<div class="flex justify-between">
 		<h1 class="text-sm font-medium opacity-70 flex items-center px-[6px]">
-			Featured
+			Featured Posts
 		</h1>
 		<div v-if="props.posts.length" class="space-x-2 opacity-70">
 			<UButton
