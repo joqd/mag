@@ -65,8 +65,8 @@ useHead({
 <template>
 	<div class="space-y-6">
 		<div class="space-y-2">
-			<!-- <h1 class="text-3xl font-semibold">Contact</h1> -->
-			<p class="text-lg opacity-70">
+			<h1 class="text-3xl font-semibold">Contact</h1>
+			<p class="text-sm opacity-70">
 				Have a question or want to work together? Send me a message and
 				I'll reply as soon as I can.
 			</p>
