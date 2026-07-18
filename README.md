@@ -1,75 +1,26 @@
-# Nuxt Minimal Starter
+mag — Personal site built with Nuxt
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A minimal personal blog and resume website showcasing projects, writing, and skills. Built with TypeScript, Nuxt, and TailwindCSS.
 
-## Setup
+### Quick start
 
-Make sure to install dependencies:
+Install dependencies and run locally:
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+### Build for production
 
-Build the application for production:
+First, set variables in `.env`.
+
+Then:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+docker compose up -d
 ```
 
-Locally preview production build:
+Config nginx and set reverse proxy on `127.0.0.0:3030`. done!
 
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+License: MIT

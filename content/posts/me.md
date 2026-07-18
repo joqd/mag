@@ -12,20 +12,34 @@ Okay so. First real post. No `def main():`, no Django settings, no Nginx config 
 
 ## Who even is this guy
 
-Hi, I'm Abolfazl. I write backend code for a living, and I promise this post has almost none of that in it. If you came here for Django tips, you're one page early — go check the [blog](/posts/), I'll wait.
+Hi, I'm Abolfazl. I write backend code for a living, and I promise this post has almost nothing to do with that. If you came here for Django tips, you're on the wrong page — go check the [blog](/posts/), I'll wait.
 
-Still here? Good. Grab tea. Or coffee. I don't judge, unless it's decaf, in which case I judge a little.
+Still here? Good. Grab some tea. Or coffee. I won't judge you, unless it's decaf. Then I judge a little.
 
 ## The whole "started coding in 2018" thing
 
-I picked up Python in 2018 mostly because I wanted my computer to do annoying repetitive things _for_ me instead of _to_ me. First script I ever wrote that actually worked felt like discovering fire. Second script broke everything and felt like discovering _why_ fire needs to be handled carefully.
+I started learning Python in 2018. I mostly wanted my computer to do boring, repetitive tasks _for_ me, instead of _to_ me. The first script that actually worked felt like magic. The second script broke everything and taught me why you should always be careful with magic.
 
-Since then it's been Telegram bots, web crawlers, a genuinely unreasonable number of game mods, and eventually actual professional work. But honestly? The best part was never the paycheck — it's that feeling when a script that shouldn't work, works, and you don't fully understand why, and you just... accept the gift.
+After that, it was Telegram bots, web scrapers, way too many game mods, and eventually real, paid work. But honestly? The best part was never the money. It's that feeling when a script you wrote somehow works, and you don't fully know why, and you just... accept the gift.
+
+## Chess: my other unpaid full-time job
+
+I love chess in a way that's not fully healthy. I lose a game, feel personally betrayed by my own brain, say something no therapist would be proud of, and then start a new game right away — like a man with no memory and even less self-respect.
+
+## On unexpected happiness
+
+Something changed in my life recently. I can't point to one exact day. It was more like a slow build-up of good days that started to mean a little more than usual.
+
+Someone I care about a lot has started calling me "bambi." I have a feeling that word is about to become my favorite word in the world. I won't say more than that — some things are nicer when they stay a little private, especially the good ones.
+
+![it's me btw](/images/bambi.jpeg)
+
+Here's what I will say: I didn't expect to feel this calm and sure about something, this fast. And I'm choosing not to overthink it, which is honestly a big step for me. Ask me again in a few months.
 
 ## Why this blog exists
 
-Mostly for me, if I'm honest. A little corner of the internet where I can write about a Django migration disaster one week and my irrational hatred of losing on time in blitz chess the next, without it being weird. If you stick around for both, even better — welcome to the club, there's no dress code and the coffee's decent.
+Mostly for myself, if I'm being honest. It's a small corner of the internet where I can write about a broken Django migration one week, and my irrational hatred of losing on time in blitz chess the next — without it feeling strange. If you enjoy both kinds of posts, even better. Welcome. No dress code, and the coffee's decent.
 
-More posts coming. Some will be technical. Some, like this one, absolutely will not be. Thanks for reading this far — genuinely, that's kind of you.
+More posts are coming. Some will be technical. Some, like this one, will not be at all. Thanks for reading this far — that genuinely means something to me.
 
 — Abolfazl
