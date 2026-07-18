@@ -23,6 +23,8 @@ export default defineNuxtConfig({
 			deployConfig: true,
 			nodeCompat: true,
 			wrangler: {
+				name: "mag",
+				compatibility_flags: ["nodejs_compat"],
 				d1_databases: [
 					{
 						binding: "nuxt_content_db",
