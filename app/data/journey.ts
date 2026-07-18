@@ -1,7 +1,6 @@
-<script setup lang="ts">
 import type { TimelineItem } from "@nuxt/ui";
 
-const items = ref<TimelineItem[]>([
+export const journey: TimelineItem[] = [
 	{
 		date: "2018",
 		title: "Started Programming Journey",
@@ -22,7 +21,7 @@ const items = ref<TimelineItem[]>([
 		description:
 			"Worked with clients on web applications, automation solutions, Telegram bots, and data collection systems. Gained experience in delivering production-ready software, understanding client requirements, and maintaining long-term projects.",
 		icon: "i-lucide-saudi-riyal",
-		to: "/projects/healifa",
+		to: "/projects",
 		slot: "sample" as const,
 	},
 	{
@@ -40,37 +39,4 @@ const items = ref<TimelineItem[]>([
 			"Currently seeking backend engineering opportunities where I can contribute to building reliable, scalable products. Open to both remote and on-site roles and excited to collaborate with ambitious teams.",
 		icon: "i-lucide-briefcase-business",
 	},
-]);
-</script>
-
-<template>
-	<UTimeline :items="items">
-		<template #sample-title="{ item }: { item: TimelineItem }">
-			<div class="flex items-center gap-1">
-				<span>{{ item.title }}</span>
-
-				<NuxtLink
-					to="/posts/sample-ecommerce"
-					class="text-primary ml-1 flex items-center text-sm gap-0.5"
-				>
-					<Icon size="15" name="i-lucide-swatch-book" />
-					Sample
-				</NuxtLink>
-			</div>
-		</template>
-
-		<template #healifa-gallery-title="{ item }: { item: TimelineItem }">
-			<div class="flex items-center gap-1">
-				<span>{{ item.title }}</span>
-
-				<NuxtLink
-					to="/posts/healifa-gallery"
-					class="text-primary ml-1 flex items-center text-sm gap-0.5"
-				>
-					<Icon size="15" name="i-lucide-images" />
-					Gallery
-				</NuxtLink>
-			</div>
-		</template>
-	</UTimeline>
-</template>
+];

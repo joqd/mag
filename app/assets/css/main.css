@@ -3,7 +3,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme static {
-	--font-sans: "Geist", sans-serif;
+	--font-sans: "Inter", sans-serif;
 }
 
 .router-link-active {
