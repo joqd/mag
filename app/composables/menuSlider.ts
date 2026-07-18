@@ -1,6 +1,6 @@
 export const useNavbarItems = () => [
 	{ label: "Home", to: "/" },
-	{ label: "Now", to: "/now" },
+	{ label: "Journey", to: "/journey" },
 	{ label: "Posts", to: "/posts" },
 ];
 
