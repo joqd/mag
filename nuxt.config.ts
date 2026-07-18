@@ -21,6 +21,7 @@ export default defineNuxtConfig({
 		preset: "cloudflare_module",
 		cloudflare: {
 			deployConfig: true,
+			nodeCompat: true,
 			wrangler: {
 				d1_databases: [
 					{
