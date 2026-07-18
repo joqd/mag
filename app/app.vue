@@ -33,6 +33,7 @@ const scrollIndicator = {
 					<NuxtPage />
 				</div>
 			</main>
+			<Lightbox />
 
 			<Footer class="mt-auto" />
 		</div>
