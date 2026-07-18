@@ -1,17 +1,16 @@
-# ---- Stage 1: Install dependencies ----
-FROM oven/bun:1 AS deps
+# ---- Stage 1: Build ----
+FROM node:22-alpine AS build
 WORKDIR /app
-COPY package.json bun.lock ./
-RUN bun install --frozen-lockfile
 
-# ---- Stage 2: Build the app ----
-FROM oven/bun:1 AS build
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+RUN apk add --no-cache python3 make g++
+
+COPY package.json ./
+RUN npm install
+
 COPY . .
-RUN bun run build
+RUN npm run build
 
-# ---- Stage 3: Production runtime ----
+# ---- Stage 2: Production ----
 FROM node:22-alpine AS production
 WORKDIR /app
 ENV NODE_ENV=production
@@ -20,7 +19,7 @@ ENV NITRO_HOST=0.0.0.0
 
 COPY --from=build /app/.output ./.output
 
-EXPOSE 3000
+EXPOSE 3030
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s \
   CMD wget -qO- http://localhost:3000/ || exit 1
