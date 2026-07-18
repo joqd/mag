@@ -25,6 +25,8 @@
 					variant="soft"
 					class="cursor-pointer"
 					size="sm"
+					to="https://github.com/joqd"
+					target="_blank"
 				>
 					<IconsGithub class="w-4 h-4" />
 					<div>Github</div>
@@ -36,20 +38,11 @@
 					variant="soft"
 					class="cursor-pointer"
 					size="sm"
+					to="https://lichess.org/@/Rodia2559"
+					target="_blank"
 				>
-					<IconsInstagram class="w-4 h-4" />
-					<div>Instagram</div>
-				</UButton>
-			</li>
-			<li class="inline">
-				<UButton
-					color="neutral"
-					variant="soft"
-					class="cursor-pointer"
-					size="sm"
-				>
-					<IconsTelegram class="w-4 h-4" />
-					<div>Telegram</div>
+					<IconsChess class="w-4 h-4" />
+					<div>Lichess</div>
 				</UButton>
 			</li>
 		</ul>

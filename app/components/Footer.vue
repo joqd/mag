@@ -10,12 +10,7 @@ const year = new Date().getFullYear();
 			class="flex h-[55px] justify-between px-[20px] max-w-[480px] mx-auto items-center"
 		>
 			<div class="text-sm">
-				© {{ year }} Joqd - Made With Love By
-				<a
-					href="https://github.com/joqd"
-					class="link underline"
-					>ASH</a
-				>
+				© {{ year }} Abolfazl - Made With Love 💙
 			</div>
 			<div>
 				<ColorModeButton />
