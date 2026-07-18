@@ -1,0 +1,13 @@
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: mag
+        restart: unless-stopped
+        ports:
+            - "3030:3000"
+        env_file:
+            - .env
+        environment:
+            NODE_ENV: production

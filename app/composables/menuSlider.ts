@@ -1,0 +1,48 @@
+export const useNavbarItems = () => [
+	{ label: "Home", to: "/" },
+	{ label: "Resume", to: "/resume" },
+	{ label: "Posts", to: "/posts" },
+];
+
+export const useMenuSliderGroups = () => {
+	const navbarItems = useNavbarItems();
+	return [
+		navbarItems,
+		[
+			{ label: "Projects", to: "/projects" },
+			{ label: "Contact", to: "/contact" },
+		],
+	];
+};
+
+export const useMenuSlider = () => {
+	const isMenuSliderOpen = useState<boolean>("menu-slider-open", () => false);
+
+	const setBodyLock = (lock: boolean) => {
+		if (typeof document === "undefined") return;
+		document.body.classList.toggle("overflow-hidden", lock);
+	};
+
+	const openMenuSlider = () => {
+		isMenuSliderOpen.value = true;
+		setBodyLock(true);
+
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
+
+	const closeMenuSlider = () => {
+		isMenuSliderOpen.value = false;
+		setBodyLock(false);
+	};
+
+	const toggleMenuSlider = () => {
+		isMenuSliderOpen.value ? closeMenuSlider() : openMenuSlider();
+	};
+
+	return {
+		isMenuSliderOpen,
+		openMenuSlider,
+		closeMenuSlider,
+		toggleMenuSlider,
+	};
+};
