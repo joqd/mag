@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const route = useRoute();
+const router = useRouter();
 const slug = computed(() => String(route.params.slug || ""));
 
 const { data: post } = await useAsyncData(
@@ -19,14 +20,26 @@ useHead(() => ({
 		},
 	],
 }));
+
+function goBack() {
+	if (window.history.state?.back) {
+		router.back();
+	} else {
+		router.push("/posts/");
+	}
+}
 </script>
 
 <template>
 	<div v-if="post" class="space-y-6">
 		<div class="space-y-2">
-			<NuxtLink to="/posts/" class="text-sm opacity-70 hover:opacity-100">
-				← Back to posts
-			</NuxtLink>
+			<button
+				type="button"
+				class="text-sm opacity-70 hover:opacity-100 cursor-pointer"
+				@click="goBack"
+			>
+				← Back
+			</button>
 			<h1 class="text-3xl font-semibold">{{ post.title }}</h1>
 			<p v-if="post.description" class="text-sm opacity-80">
 				{{ post.description }}
@@ -34,7 +47,9 @@ useHead(() => ({
 			<p v-if="post.date" class="text-xs opacity-70">{{ post.date }}</p>
 		</div>
 
-		<article class="prose prose-neutral max-w-none dark:prose-invert text-justify">
+		<article
+			class="prose prose-neutral max-w-none dark:prose-invert text-justify"
+		>
 			<ContentRenderer :value="post" />
 		</article>
 	</div>
