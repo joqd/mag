@@ -4,21 +4,27 @@ import { journey } from "~/data/journey";
 import { skillGroups } from "~/data/skills";
 import { projects } from "~/data/projects";
 
-useHead({
-	title: "Resume | Abolfazl's Blog",
-});
-
 const featuredProjects = computed(() => projects.slice(0, 3));
 
 useHead({
 	title: "Resume | Abolfazl's Blog",
-	meta: [
-		{
-			name: "description",
-			content:
-				"Backend developer specializing in Python and Django — journey, skills, and projects.",
-		},
-	],
+});
+
+useSeoMeta({
+	title: "Abolfazl Shahbazi | ابوالفضل شهبازی — Backend Developer",
+	description:
+		"Abolfazl Shahbazi (ابوالفضل شهبازی) — Backend Developer specializing in Python and Django. Resume, projects, and journey.",
+	ogTitle: "Abolfazl Shahbazi — Backend Developer",
+	ogDescription:
+		"Python & Django backend developer. See my resume, skills, and projects.",
+	ogImage: "https://rodia.ir/images/me.jpg",
+});
+
+definePageMeta({
+	sitemap: {
+		changefreq: "weekly",
+		priority: 1.0,
+	},
 });
 </script>
 

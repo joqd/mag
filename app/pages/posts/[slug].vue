@@ -28,6 +28,8 @@ function goBack() {
 		router.push("/posts/");
 	}
 }
+
+// useSeoMeta(post.value.seo || {});
 </script>
 
 <template>
