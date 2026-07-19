@@ -1,4 +1,7 @@
-import { defineContentConfig, defineCollection, z } from "@nuxt/content";
+import { defineContentConfig, defineCollection } from "@nuxt/content";
+import { defineSitemapSchema } from "@nuxtjs/sitemap/content";
+
+import { z } from "zod";
 
 export default defineContentConfig({
 	collections: {
@@ -11,6 +14,7 @@ export default defineContentConfig({
 				date: z.coerce.date(),
 				featured: z.boolean().default(false),
 				tags: z.array(z.string()).optional(),
+				sitemap: defineSitemapSchema() as z.ZodTypeAny,
 			}),
 		}),
 	},

@@ -6,6 +6,13 @@ const { data: posts } = await useAsyncData("posts", () =>
 useHead({
 	title: "Posts | Abolfazl's Blog",
 });
+
+definePageMeta({
+	sitemap: {
+		changefreq: "daily",
+		priority: 0.8,
+	},
+});
 </script>
 
 <template>

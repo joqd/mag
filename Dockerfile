@@ -1,27 +1,25 @@
-# ---- Stage 1: Build ----
-FROM node:22-alpine AS build
+# use the official Bun image
+# see all versions at https://hub.docker.com/r/oven/bun/tags
+FROM oven/bun:1 AS build
 WORKDIR /app
 
-RUN apk add --no-cache python3 make g++
+COPY package.json bun.lock* ./
 
-COPY package.json ./
-RUN npm install
+# use ignore-scripts to avoid building node modules like better-sqlite3
+RUN bun install --frozen-lockfile --ignore-scripts
 
+# Copy the entire project
 COPY . .
-RUN npm run build
 
-# ---- Stage 2: Production ----
-FROM node:22-alpine AS production
+RUN bun --bun run build
+
+# copy production dependencies and source code into final image
+FROM oven/bun:1 AS production
 WORKDIR /app
-ENV NODE_ENV=production
-ENV NITRO_PORT=3000
-ENV NITRO_HOST=0.0.0.0
 
-COPY --from=build /app/.output ./.output
+# Only `.output` folder is needed from the build stage
+COPY --from=build /app/.output /app
 
-EXPOSE 3030
-
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s \
-  CMD wget -qO- http://localhost:3000/ || exit 1
-
-CMD ["node", ".output/server/index.mjs"]
+# run the app
+EXPOSE 3000/tcp
+ENTRYPOINT [ "bun", "--bun", "run", "/app/server/index.mjs" ]

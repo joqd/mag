@@ -10,6 +10,13 @@ useHead({
 		},
 	],
 });
+
+definePageMeta({
+	sitemap: {
+		changefreq: "weekly",
+		priority: 1.0,
+	},
+});
 </script>
 
 <template>
@@ -23,10 +30,7 @@ useHead({
 			</p>
 		</div>
 
-		<div
-			v-if="projects.length"
-			class="grid grid-cols-1 gap-6"
-		>
+		<div v-if="projects.length" class="grid grid-cols-1 gap-6">
 			<ProjectCard
 				v-for="project in projects"
 				:key="project.slug"

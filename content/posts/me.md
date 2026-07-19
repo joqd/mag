@@ -4,6 +4,9 @@ description: Not a tutorial, not a tech deep-dive — just me, rambling about ch
 date: 2026-07-18
 featured: true
 tags: [life, about-me]
+
+sitemap:
+    lastmod: 2026-07-18
 ---
 
 Okay so. First real post. No `def main():`, no Django settings, no Nginx config that decided to hate me at 2 AM. Just me, saying hi properly.

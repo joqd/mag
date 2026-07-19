@@ -4,6 +4,9 @@ description: A backend developer's honest, slightly biased take on Nuxt vs Next 
 date: 2026-07-19
 featured: false
 tags: [programming, nuxt, opinion]
+
+sitemap:
+    lastmod: 2026-07-19
 ---
 
 Let's get the confession out of the way first: I'm a backend guy. Django, PostgreSQL, Nginx, the usual suspects. Frontend is not my home turf, it's more like a country I visit a few times a year and always forget the local customs of. And yet, somehow, this entire blog you're reading is built with Nuxt. Not Next. Not SvelteKit, even though — I'll admit it out loud — Svelte is probably the "cool" pick for someone with my kind of brain.
@@ -14,7 +17,7 @@ So here's why Nuxt won anyway.
 
 The first time I opened a Nuxt project, I didn't feel like I had to learn a new way of thinking. I put a file in `pages/`, and it became a route. I put a file in `components/`, and I could use it anywhere without an import line. I wanted global state shared between two unrelated parts of the app (hello, `usePlayer` composable from my music page), and `useState` just... did that. No boilerplate, no ceremony, no fifteen-minute detour into "which state library should I install today."
 
-For a backend developer, this matters more than people admit. I don't want to *learn* the frontend framework. I want to *use* it to finish a feature and go back to the part of the stack I actually understand.
+For a backend developer, this matters more than people admit. I don't want to _learn_ the frontend framework. I want to _use_ it to finish a feature and go back to the part of the stack I actually understand.
 
 ## Vue reads like normal code
 
@@ -35,7 +38,7 @@ Okay, real talk. Svelte is genuinely lovely. The compiler-driven approach is cle
 But "tempted" isn't "convinced." Two things kept pulling me back to Nuxt:
 
 1. **The ecosystem is just bigger and calmer.** Every time I needed something — a UI kit, a swiper, a markdown/content system, animation helpers — there was a mature Nuxt module for it, usually built by the same core team, usually well documented. With Svelte, I found myself doing more manual wiring, more "here's how you'd probably do this" blog posts instead of official, polished modules.
-2. **Vue's mental model happens to match how I already think.** This one isn't really Svelte's fault — Svelte is arguably *simpler* in some ways. But simple isn't always the same as familiar, and Vue's reactivity model (refs, computed values, watchers) mapped onto my existing habits faster than Svelte's syntax did. That's not a knock on Svelte. That's just me being a creature of habit with a Python brain.
+2. **Vue's mental model happens to match how I already think.** This one isn't really Svelte's fault — Svelte is arguably _simpler_ in some ways. But simple isn't always the same as familiar, and Vue's reactivity model (refs, computed values, watchers) mapped onto my existing habits faster than Svelte's syntax did. That's not a knock on Svelte. That's just me being a creature of habit with a Python brain.
 
 ## The honest summary
 

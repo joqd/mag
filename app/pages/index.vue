@@ -1,8 +1,4 @@
 <script setup lang="ts">
-useHead({
-	title: "Abolfazl's Blog",
-});
-
 interface Post {
 	title?: string;
 	description?: string;
@@ -33,6 +29,27 @@ const tags = computed(() => {
 	return Array.from(counts.entries())
 		.map(([name, count]) => ({ name, count }))
 		.sort((a, b) => b.count - a.count);
+});
+
+useHead({
+	title: "Abolfazl's Blog",
+});
+
+useSeoMeta({
+	title: "Abolfazl Shahbazi | ابوالفضل شهبازی — Backend Developer",
+	description:
+		"Abolfazl Shahbazi (ابوالفضل شهبازی) — Backend Developer specializing in Python and Django. Resume, projects, and journey.",
+	ogTitle: "Abolfazl Shahbazi — Backend Developer",
+	ogDescription:
+		"Python & Django backend developer. See my resume, skills, and projects.",
+	ogImage: "https://rodia.ir/images/me.jpg",
+});
+
+definePageMeta({
+	sitemap: {
+		changefreq: "weekly",
+		priority: 1.0,
+	},
 });
 </script>
 
