@@ -1,25 +1,16 @@
-# use the official Bun image
-# see all versions at https://hub.docker.com/r/oven/bun/tags
-FROM oven/bun:1 AS build
+FROM node:22-alpine AS build
 WORKDIR /app
+RUN corepack enable && corepack prepare pnpm@9.15.0 --activate
 
-COPY package.json bun.lock* ./
+COPY package.json pnpm-lock.yaml* ./
+RUN pnpm install --frozen-lockfile --ignore-scripts
 
-# use ignore-scripts to avoid building node modules like better-sqlite3
-RUN bun install --frozen-lockfile --ignore-scripts
-
-# Copy the entire project
 COPY . .
+RUN pnpm run build
 
-RUN bun --bun run build
-
-# copy production dependencies and source code into final image
-FROM oven/bun:1 AS production
+FROM node:22-alpine AS production
 WORKDIR /app
-
-# Only `.output` folder is needed from the build stage
 COPY --from=build /app/.output /app
 
-# run the app
 EXPOSE 3000/tcp
-ENTRYPOINT [ "bun", "--bun", "run", "/app/server/index.mjs" ]
+ENTRYPOINT [ "node", "/app/server/index.mjs" ]
