@@ -4,10 +4,10 @@ interface Post {
 	description?: string;
 	path?: string;
 	date?: string;
+	featured?: boolean;
 }
 
 interface Props {
-	featured?: boolean;
 	post?: Post;
 }
 
@@ -40,7 +40,7 @@ const props = withDefaults(defineProps<Props>(), {
 		</div>
 
 		<div class="flex space-x-1">
-			<div v-if="props.featured">
+			<div v-if="props.post?.featured">
 				<UTooltip
 					arrow
 					disableClosingTrigger
